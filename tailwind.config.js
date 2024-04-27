@@ -5,7 +5,9 @@ export default {
     extend: {
       colors: {
         primary: "#443085",
-
+      },
+      backgroundImage: {
+        hero: "clip-path: polygon(25% 58.25%, 75% 75%, 25% 75%);",
       },
     },
   },
