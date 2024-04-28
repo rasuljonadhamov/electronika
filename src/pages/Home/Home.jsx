@@ -1,4 +1,5 @@
 import Slider from "react-slick";
+import Button from "../../components/Button";
 
 const Home = () => {
   const settings = {
@@ -10,48 +11,46 @@ const Home = () => {
   };
 
   return (
-    <div className="hero">
-      <Slider {...settings}>
-        <div className="container">
-          <div className="flex items-center  justify-evenly ">
-            <img
-              src="/public/images/svg/spark.svg"
-              alt="Slide 1"
-              className=" object-cover w-1/2 "
-            />
-            <div className="">
-              <h1 className="text-black text-5xl font-medium mb-8 ">
-                <span className="text-[#E61212]">Aksiyada</span> ishtirok etib{" "}
-                <span className="text-primary mr-2"> Spark</span>
-                avtomobilini yutib oling!
-              </h1>
-              <button className="bg-primary hover:bg-opacity-60 text-white font-bold py-2 px-20 rounded-sm shadow-md mt-36 ml-44">
-                Batafsil
-              </button>
-            </div>
+    <Slider {...settings}>
+      <div className="container mx-auto">
+        <div className="flex flex-col lg:flex-row items-center lg:justify-between">
+          <img
+            src="/public/images/svg/spark.svg"
+            alt="Slide 1"
+            className="object-cover w-full lg:w-1/2 mb-8 lg:mb-0"
+          />
+          <div className="text-center lg:text-left lg:w-1/2">
+            <h1 className="text-black text-3xl lg:text-5xl font-medium mb-8 lg:mb-12">
+              <span className="text-[#E61212]">Aksiyada</span> ishtirok etib{" "}
+              <span className="text-primary mr-2"> Spark</span>
+              avtomobilini yutib oling!
+            </h1>
+            <button className="bg-primary hover:bg-opacity-60 text-white font-bold py-2 px-8 lg:px-12 rounded-sm shadow-md">
+              Batafsil
+            </button>
           </div>
         </div>
-        <div className="container">
-          <div className="flex items-center  justify-evenly ">
-            <img
-              src="/public/images/svg/spark.svg"
-              alt="Slide 1"
-              className=" object-cover w-1/2 "
-            />
-            <div className="">
-              <h1 className="text-black text-5xl font-medium mb-8 ">
-                <span className="text-[#E61212]">Aksiyada</span> ishtirok etib{" "}
-                <span className="text-primary mr-2"> Spark</span>
-                avtomobilini yutib oling!
-              </h1>
-              <button className="bg-primary hover:bg-opacity-60 text-white font-bold py-2 px-20 rounded-sm shadow-md mt-36 ml-48">
-                Batafsil
-              </button>
-            </div>
+      </div>
+      <div className="container mx-auto">
+        <div className="flex flex-col lg:flex-row items-center lg:justify-between">
+          <img
+            src="/public/images/svg/spark.svg"
+            alt="Slide 1"
+            className="object-cover w-full lg:w-1/2 mb-8 lg:mb-0"
+          />
+          <div className="text-center lg:text-left lg:w-1/2">
+            <h1 className="text-black text-3xl lg:text-5xl font-medium mb-8 lg:mb-12">
+              <span className="text-[#E61212]">Aksiyada</span> ishtirok etib{" "}
+              <span className="text-primary mr-2"> Spark</span>
+              avtomobilini yutib oling!
+            </h1>
+            <button className="bg-primary hover:bg-opacity-60 text-white font-bold py-2 px-8 lg:px-12 rounded-sm shadow-md">
+              Batafsil
+            </button>
           </div>
         </div>
-      </Slider>
-    </div>
+      </div>
+    </Slider>
   );
 };
 
