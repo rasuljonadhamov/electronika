@@ -1,4 +1,4 @@
-import { NavLink, Outlet } from "react-router-dom";
+import { NavLink, Outlet, useNavigate } from "react-router-dom";
 import Input from "./Input";
 import { MobileNav } from "./MobileHeader";
 import { useState } from "react";
@@ -12,7 +12,7 @@ const links = [
 
 function Header({ cart }) {
   const [showLinks, setShowLinks] = useState(false);
-
+  const navigate = useNavigate();
   const toggleLinks = () => {
     setShowLinks(!showLinks);
   };
@@ -49,7 +49,10 @@ function Header({ cart }) {
           className="hidden lg:block"
         />
 
-        <div className="hidden lg:flex items-center gap-3 relative">
+        <div
+          onClick={() => navigate("/card")}
+          className="hidden lg:flex items-center gap-3 relative"
+        >
           <img
             src="/public/images/svg/profile-circle.svg"
             alt="Profile picture"

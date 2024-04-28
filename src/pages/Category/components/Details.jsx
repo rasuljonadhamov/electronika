@@ -34,7 +34,7 @@ const Details = ({ products, buttons, cart, setCart }) => {
           cartItem.productCode === item.productCode
             ? {
                 ...cartItem,
-                amount: cartItem.amount + 1,
+                amount: cartItem.amount + count,
               }
             : cartItem
         )
@@ -42,7 +42,7 @@ const Details = ({ products, buttons, cart, setCart }) => {
       return;
     }
 
-    setCart((cart) => [...cart, { ...item, amount: 1 }]);
+    setCart((cart) => [...cart, { ...item, amount: count }]);
   };
 
   return (
@@ -61,14 +61,18 @@ const Details = ({ products, buttons, cart, setCart }) => {
         ))}
       </div>
 
-      <div className="lg:hidden flex justify-evenly px-16">
-        <Input placeholder="Qidiruv..." type="search" className="lg:hidden" />
+      <div className="lg:hidden flex justify-evenly gap-9 px-16">
+        <Input
+          placeholder="Qidiruv..."
+          type="search"
+          className="lg:hidden w-32 sm:w-44"
+        />
         <select
           value={activeButtonId}
           onChange={(e) => handleButtonClick(parseInt(e.target.value))}
-          className="block appearance-none  bg-white border border-gray-300 text-gray-700 py-2 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+          className="block appearance-none w-36 bg-white border border-gray-300 text-gray-700 py-2 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
         >
-          <option value="">Select a button</option>
+          <option value="">Filtr</option>
           {buttons.map((button) => (
             <option key={button.id} value={button.id}>
               {button.text}
@@ -105,20 +109,24 @@ const Details = ({ products, buttons, cart, setCart }) => {
             </div>
           </div>
 
-          <div className=" flex items-center flex-col justify-center mt-4 select-none">
-            <div className="flex  items-center">
-              <Button title="-" onClick={handleDecrement} />
+          <div className=" flex items-center  justify-center  select-none">
+            <div className="flex  items-center border shadow-md rounded-lg">
+              <button className="p-2 border-none " onClick={handleDecrement}>
+                -
+              </button>
               <input
                 type="text"
                 value={count}
                 readOnly
-                className="w-12 text-center border border-gray-300 px-2 py-1"
+                className="w-8 text-center  px-2 py-1"
               />
-              <Button title="+" onClick={handleIncrement} />
+              <button className="p-2 border-none " onClick={handleIncrement}>
+                +
+              </button>
             </div>
             <button
               onClick={() => handleChange(product)}
-              className="bg-primary border-none mt-4  rounded-sm text-white ml-10 px-4 py-2"
+              className="bg-primary border-none  rounded-sm text-white ml-10 px-4 py-2"
             >
               Xarid qilish
             </button>

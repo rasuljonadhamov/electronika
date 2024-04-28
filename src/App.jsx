@@ -12,6 +12,7 @@ import Category from "./pages/Category/Category";
 import About from "./pages/About/About";
 import Details from "./pages/Category/components/Details";
 import { useState } from "react";
+import Card from "./pages/Card/Card";
 
 const items = [
   {
@@ -132,6 +133,7 @@ const App = () => {
           }
         />
         <Route path="/about" element={<About />} />
+        <Route path="/card" element={<Card cart={cart} setCart={setCart} />} />
       </Routes>
       <Footer />
     </BrowserRouter>

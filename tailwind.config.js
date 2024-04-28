@@ -10,7 +10,6 @@ export default {
         hero: "clip-path: polygon(25% 58.25%, 75% 75%, 25% 75%);",
       },
       screens: {
-        xxs: "0",
         xsm: "420px",
         sm: "640px",
         md: "768px",
