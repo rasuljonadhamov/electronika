@@ -5,7 +5,6 @@ const Details = ({ product }) => {
   const [count, setCount] = useState(1);
 
   const handleAddToCart = () => {
-    // Implement your logic to add the product to the cart
     console.log(`Added ${count} ${product.name} to cart`);
   };
 
