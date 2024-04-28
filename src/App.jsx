@@ -4,12 +4,15 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Category from "./pages/Category/Category";
 import About from "./pages/About/About";
+import Details from "./pages/Category/components/Details";
 
 const items = [
   {
     id: 1,
     image: "/public/images/png/termiz.png",
     title: "Electric Kettle 1L",
+    description:
+      "Lorem ipsum dolor sit amet consectetur. Id luctus pharetra suscipit dolor eu. A rhoncus sit consequat pretium in massa. Lobortis felis nisi scelerisque fringilla cursus. Tellus aliquam nascetur in accumsan massa quisque id sed.",
     price: "99,000 so'm",
     stockStatus: "1+",
     stockText: "KPI +1",
@@ -74,6 +77,17 @@ const router = createBrowserRouter([
       <>
         <Header />
         <About />
+        <Footer />
+      </>
+    ),
+  },
+
+  {
+    path: "/category/:id",
+    element: (
+      <>
+        <Header />
+        <Details product={items[0]} />
         <Footer />
       </>
     ),

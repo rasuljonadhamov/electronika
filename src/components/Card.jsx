@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
 
-const Card = ({ image, title, price, stockStatus, stockText }) => {
+const Card = ({ image, title, price, stockStatus, stockText, id }) => {
   return (
     <li className="category-item  rounded-lg shadow-lg hover:shadow-xl cursor-pointer hover:scale-105 transition-all duration-300 overflow-hidden">
-      <Link to="#" className="block p-4 text-center">
+      <Link to={`/category/${id}`} className="block p-4 text-center">
         <img className="w-52 h-36 object-contain" src={image} alt={title} />
         <div className="mt-4">
           <h3 className="text-lg font-bold text-gray-900">{title}</h3>
