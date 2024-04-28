@@ -8,7 +8,8 @@ const links = [
   { path: "/contact", link: "Aloqa" },
 ];
 
-function Header() {
+function Header({ cart }) {
+  console.log(cart);
   return (
     <div className="container mx-auto">
       <header className="flex justify-between md:flex-row items-center py-4 md:py-6 px-4 md:px-8">
@@ -41,7 +42,7 @@ function Header() {
           className="hidden lg:block"
         />
 
-        <div className="hidden lg:flex items-center gap-3">
+        <div className="hidden lg:flex items-center gap-3 relative">
           <img
             src="/public/images/svg/profile-circle.svg"
             alt="Profile picture"
@@ -52,6 +53,9 @@ function Header() {
             alt="Shopping cart"
             className="w-8 h-8 md:w-10 md:h-10"
           />
+          <span className="absolute right-4 text-red-600 -top-5">
+            {cart.length}
+          </span>
         </div>
 
         <NavLink to="#" className="lg:hidden">
