@@ -1,5 +1,7 @@
 import { NavLink, Outlet } from "react-router-dom";
 import Input from "./Input";
+import { MobileNav } from "./MobileHeader";
+import { useState } from "react";
 
 const links = [
   { path: "/", link: "Asosiy bo’lim" },
@@ -9,6 +11,11 @@ const links = [
 ];
 
 function Header({ cart }) {
+  const [showLinks, setShowLinks] = useState(false);
+
+  const toggleLinks = () => {
+    setShowLinks(!showLinks);
+  };
   console.log(cart);
   return (
     <div className="container mx-auto">
@@ -63,10 +70,13 @@ function Header({ cart }) {
             className="w-8 h-8 lg:hidden"
             src="/public/images/svg/hamburger.svg"
             alt="Menu button"
+            onClick={toggleLinks}
           />
         </NavLink>
         <Outlet />
       </header>
+
+      <MobileNav open={showLinks} setOpen={setShowLinks} />
     </div>
   );
 }

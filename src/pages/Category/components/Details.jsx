@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Button from "../../../components/Button";
 import { useParams } from "react-router-dom";
+import Input from "../../../components/Input";
 
 const Details = ({ products, buttons, cart, setCart }) => {
   const { id } = useParams();
@@ -46,7 +47,7 @@ const Details = ({ products, buttons, cart, setCart }) => {
 
   return (
     <div className=" gap-4 flex flex-col lg:flex-row">
-      <div className="flex flex-col gap-5 mt-4 pl-5">
+      <div className=" flex-col gap-5 mt-4 pl-5  hidden lg:flex">
         {buttons.map((button) => (
           <Button
             key={button.text}
@@ -59,12 +60,29 @@ const Details = ({ products, buttons, cart, setCart }) => {
           />
         ))}
       </div>
+
+      <div className="lg:hidden flex justify-evenly px-16">
+        <Input placeholder="Qidiruv..." type="search" className="lg:hidden" />
+        <select
+          value={activeButtonId}
+          onChange={(e) => handleButtonClick(parseInt(e.target.value))}
+          className="block appearance-none  bg-white border border-gray-300 text-gray-700 py-2 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+        >
+          <option value="">Select a button</option>
+          {buttons.map((button) => (
+            <option key={button.id} value={button.id}>
+              {button.text}
+            </option>
+          ))}
+        </select>
+      </div>
+
       <div className="container mx-auto px-4 py-8 flex flex-col lg:flex-row gap-12">
         <div className="shadow-md pt-20 px-9 pb-10 lg:w-96">
           <img src={product.image} alt={product.name} className="w-full" />
         </div>
 
-        <div className="flex flex-col justify-between lg:w-1/2">
+        <div className="flex flex-col justify-between gap-5 lg:w-1/2">
           <div>
             <h2 className="text-2xl font-semibold mb-12">{product.name}</h2>
             <p className="text-gray-600 mt-2 mb-10">{product.description}</p>

@@ -1,3 +1,118 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.blob.green {
+  background: #3ccf4e;
+  box-shadow: 0 0 0 0 #3ccf4e;
+  animation: pulse-green 2s infinite;
+}
+
+.main__title {
+  margin: 0px;
+  color: rgb(20, 32, 51);
+  font-family: "Darker Grotesque", sans-serif;
+  font-weight: 900;
+  font-size: 48px;
+  line-height: 1.2;
+}
+
+.results__amount {
+  margin: 0px 0px 0.35em;
+  font-weight: 800;
+  font-size: 48px;
+  font-family: "Darker Grotesque", sans-serif;
+  line-height: 52px;
+}
+
+.results__info {
+  margin: 0px;
+  color: rgb(102, 112, 133);
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 28px;
+  font-family: Inter, sans-serif;
+}
+
+.blog-footer {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0 3rem 2.5rem 0rem;
+  padding-top: 2.5rem;
+  position: relative;
+  clear: both;
+}
+
+.arrow-alt-right:after {
+  content: "  \2192";
+}
+
+.blog-meta--tags:before {
+  content: "#";
+  font-weight: 400;
+  color: #f37335;
+  font-size: 0.8rem;
+  margin-right: 0.25rem;
+}
+
+.date-calendar::before {
+  content: "📅  ";
+}
+
+.navbar-links {
+  background: #f37335;
+  color: white;
+  display: block;
+}
+
+.responsive-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 300px;
+  background-color: #e4cec4;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  height: 100%;
+  opacity: 0;
+  transform: translateX(-100%);
+  visibility: hidden;
+  transition: all 0.4s ease-in-out;
+  z-index: 999998;
+}
+
+.active-navbars {
+  opacity: 1;
+  visibility: visible;
+  overflow: auto;
+  transform: translateX(0);
+}
+
+.responsive-menu--close-area {
+  height: 3rem;
+  width: 100%;
+  background-color: #e4cec4;
+  position: -webkit-sticky;
+  position: sticky;
+  z-index: 99;
+  top: 0;
+}
+
+.responsive-menu > ul > li {
+  margin-bottom: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 1rem 1.25rem;
+}
+
+.responsive-menu ul li a {
+  color: #333;
+  font-size: 1.1rem;
+  font-weight: 600;
+  font-family: var(--shelly-font-family-secondary);
+  text-decoration: underline;
+}
+
+a {
+  text-decoration: none;
+}
