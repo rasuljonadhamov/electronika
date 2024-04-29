@@ -103,6 +103,7 @@ const buttons = [
 
 const App = () => {
   const [cart, setCart] = useState([]);
+  
   return (
     <BrowserRouter>
       <Header cart={cart} />

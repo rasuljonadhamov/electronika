@@ -1,5 +1,7 @@
+import { createUserWithEmailAndPassword } from "firebase/auth";
 import { useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { auth } from "../../utils/firebase";
 
 export default function Register() {
   const usernameRef = useRef();
@@ -61,11 +63,25 @@ export default function Register() {
     return hasNoError;
   }
 
+  const handleRegistration = (email, password) => {
+    createUserWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        const user = userCredential.user;
+        alert("New user registered:", user);
+      })
+      .catch((error) => {
+        const errorMessage = error.message;
+        alert("Registration failed:", errorMessage);
+      });
+  };
+
   function handleSubmit(e) {
     e.preventDefault();
     if (!validate()) {
       return;
     }
+
+    handleRegistration(emailRef.current.value, passwordRef.current.value);
     navigate("/");
   }
 

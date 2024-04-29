@@ -1,7 +1,9 @@
 import { Link, NavLink, Outlet, useNavigate } from "react-router-dom";
 import Input from "./Input";
 import { MobileNav } from "./MobileHeader";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { onAuthStateChanged } from "firebase/auth";
+import { auth } from "../utils/firebase";
 
 const links = [
   { path: "/", link: "Asosiy bo’lim" },
@@ -12,11 +14,26 @@ const links = [
 
 function Header({ cart }) {
   const [showLinks, setShowLinks] = useState(false);
+  const [userEmail, setUserEmail] = useState("");
+
   const navigate = useNavigate();
   const toggleLinks = () => {
     setShowLinks(!showLinks);
   };
-  console.log(cart);
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        const email = user.email;
+        const shortEmail = email.substring(0, 7); // Extract first three letters
+        setUserEmail(`${shortEmail}...`);
+      } else {
+        setUserEmail("");
+      }
+    });
+    return () => unsubscribe();
+  }, []);
+
   return (
     <div className="container mx-auto">
       <header className="flex justify-between md:flex-row items-center py-4 md:py-6 px-4 md:px-8">
@@ -59,6 +76,9 @@ function Header({ cart }) {
             className="w-8 h-8 md:w-10 md:h-10 cursor-pointer"
             onClick={() => navigate("/login")}
           />
+          <span className="absolute -left-2 -bottom-8">
+            {userEmail && userEmail}
+          </span>
           <img
             src="../../public/images/svg/shopping-card.svg"
             alt="Shopping cart"

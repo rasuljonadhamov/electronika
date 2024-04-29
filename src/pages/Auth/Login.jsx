@@ -1,13 +1,12 @@
+import { signInWithEmailAndPassword } from "firebase/auth";
 import { useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-// import { useDispatch } from "react-redux";
-// import { toggleLoginWindow } from "../redux/loginWindowSlice";
+import { auth } from "../../utils/firebase";
 
 export default function Login() {
   const usernameEmail = useRef();
   const passwordRef = useRef();
   const navigate = useNavigate();
-  //   const dispatch = useDispatch();
 
   const [usernameEmailError, setUsernameEmailError] = useState("");
   const [passwordError, setPasswordError] = useState("");
@@ -46,26 +45,25 @@ export default function Login() {
     return hasNoError;
   }
 
+  function handleSignIn(email, password) {
+    signInWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        const user = userCredential.user;
+        alert("Sign-in successful:", user);
+        navigate("/");
+      })
+      .catch((error) => {
+        const errorMessage = error.message;
+        alert("Sign-in failed:", errorMessage);
+      });
+  }
+
   function handleSubmit(e) {
     e.preventDefault();
     if (!validate()) {
       return;
     }
-    const users = JSON.parse(localStorage.getItem("users")) ?? [];
-    if (users) {
-      const index = users.findIndex(
-        (user) =>
-          user.username === usernameEmail.current.value ||
-          user.email === usernameEmail.current.value
-      );
-
-      if (index !== -1 && users[index].password === passwordRef.current.value) {
-        navigate("/");
-      } else {
-        console.log("incorrect password");
-        setPasswordError("You have entered an incorrect email or password");
-      }
-    }
+    handleSignIn(usernameEmail.current.value, passwordRef.current.value);
   }
   return (
     <div className="flex flex-col items-center mt-20">
