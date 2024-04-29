@@ -21,7 +21,7 @@ const Card = ({ cart, setCart }) => {
               </div>
 
               <Link
-                className="no-underline font-normal mt-16 text-1xl py-2 px-4 bg-primary text-white rounded-md "
+                className="no-underline font-normal mt-32 text-1xl py-2 px-4 bg-primary text-white rounded-md "
                 to={"/costumers"}
               >
                 Sotib olish
@@ -31,7 +31,10 @@ const Card = ({ cart, setCart }) => {
         </>
       ) : (
         <h1 className="text-3xl my-16 font-bold -tracking-tight">
-          Your Card is epmty go shopping
+          Your Card is epmty{" "}
+          <Link to={"/"} className="cursor-pointer text-blue-500">
+            go shopping
+          </Link>
         </h1>
       )}
     </div>

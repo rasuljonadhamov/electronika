@@ -2,7 +2,7 @@ import { useState } from "react";
 import Button from "../../components/Button";
 import Input from "../../components/Input";
 
-const Custumers = () => {
+const Customers = () => {
   const [formData, setFormData] = useState({
     fullName: "",
     phoneNumber: "",
@@ -11,6 +11,8 @@ const Custumers = () => {
     cardNumber: "",
   });
   const [errors, setErrors] = useState({});
+  const [successMessage, setSuccessMessage] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -53,7 +55,22 @@ const Custumers = () => {
 
   const handleSubmit = () => {
     if (validateForm()) {
-      alert("Form submitted:", formData);
+      setTimeout(() => {
+        if (Object.keys(errors).length === 0) {
+          setSuccessMessage("Qabul qilindi!");
+          setErrorMessage("");
+          setFormData({
+            fullName: "",
+            phoneNumber: "",
+            passportNumber: "",
+            jshir: "",
+            cardNumber: "",
+          });
+        } else {
+          setErrorMessage("Kod notog’ri qaytadan urunib ko’ring...");
+          setSuccessMessage("");
+        }
+      }, 2000);
     }
   };
 
@@ -96,6 +113,8 @@ const Custumers = () => {
         type="number"
         className={"w-full"}
       />
+      {successMessage && <p className="text-green-600">{successMessage}</p>}
+      {errorMessage && <p className="text-red-600">{errorMessage}</p>}
       <Button
         onClick={handleSubmit}
         title={"Yuborish"}
@@ -106,4 +125,4 @@ const Custumers = () => {
   );
 };
 
-export default Custumers;
+export default Customers;

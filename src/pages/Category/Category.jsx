@@ -6,11 +6,17 @@ import Input from "../../components/Input";
 const Category = ({ title, items, buttons }) => {
   const [activeButtonId, setActiveButtonId] = useState(1);
   const [currentPage, setCurrentPage] = useState(1);
+  const [searchQuery, setSearchQuery] = useState("");
 
   const itemsPerPage = 6;
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-  const currentItems = items.slice(indexOfFirstItem, indexOfLastItem);
+
+  const filteredItems = items.filter((item) =>
+    item.title.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
+  const currentItems = filteredItems.slice(indexOfFirstItem, indexOfLastItem);
 
   const handleButtonClick = (buttonId) => {
     setActiveButtonId(buttonId === activeButtonId ? 1 : buttonId);
@@ -18,6 +24,11 @@ const Category = ({ title, items, buttons }) => {
 
   const paginate = (pageNumber) => {
     setCurrentPage(pageNumber);
+  };
+
+  const handleSearch = (e) => {
+    setSearchQuery(e.target.value);
+    setCurrentPage(1);
   };
 
   return (
@@ -42,6 +53,8 @@ const Category = ({ title, items, buttons }) => {
             placeholder="Qidiruv..."
             type="search"
             className="lg:hidden w-52  sm:w-96"
+            onChange={handleSearch}
+            value={searchQuery}
           />
           <select
             value={activeButtonId}
