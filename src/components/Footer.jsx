@@ -5,7 +5,9 @@ function Footer() {
     <footer className="w-full mt-12 bg-primary text-white py-8 px-4 pb-24">
       <div className="container mx-auto flex flex-wrap justify-between">
         <div className="">
-          <h2 className="text-3xl font-medium">LOGO</h2>
+          <Link to={"/"} className="text-3xl cursor-pointer font-medium">
+            LOGO
+          </Link>
           <p className="mt-4 font-bold opacity-70">Elektronika</p>
         </div>
         <div className="flex flex-col space-y-4">
@@ -13,7 +15,7 @@ function Footer() {
           <Link to={"/"} className="font-medium opacity-70">
             Asosiy bo'lim
           </Link>
-          <Link to={"/"} className="font-medium opacity-70">
+          <Link to={"/category"} className="font-medium opacity-70">
             Product
           </Link>
           <Link to={"/contact"} className="font-medium opacity-70">

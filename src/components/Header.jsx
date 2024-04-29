@@ -1,4 +1,4 @@
-import { NavLink, Outlet, useNavigate } from "react-router-dom";
+import { Link, NavLink, Outlet, useNavigate } from "react-router-dom";
 import Input from "./Input";
 import { MobileNav } from "./MobileHeader";
 import { useState } from "react";
@@ -20,9 +20,12 @@ function Header({ cart }) {
   return (
     <div className="container mx-auto">
       <header className="flex justify-between md:flex-row items-center py-4 md:py-6 px-4 md:px-8">
-        <h1 className="text-2xl md:text-3xl uppercase text-primary font-bold mb-4 md:mb-0">
+        <Link
+          to={"/"}
+          className="text-2xl md:text-3xl uppercase text-primary font-bold mb-4 md:mb-0"
+        >
           Logo
-        </h1>
+        </Link>
 
         <nav className="hidden lg:flex flex-wrap gap-4 md:gap-10 text-base md:text-xl font-medium">
           {links.map((link, i) => (
@@ -54,12 +57,12 @@ function Header({ cart }) {
           className="hidden lg:flex items-center gap-3 relative"
         >
           <img
-            src="/public/images/svg/profile-circle.svg"
+            src="../../public/images/svg/profile-circle.svg"
             alt="Profile picture"
             className="w-8 h-8 md:w-10 md:h-10"
           />
           <img
-            src="/public/images/svg/shopping-card.svg"
+            src="../../public/images/svg/shopping-card.svg"
             alt="Shopping cart"
             className="w-8 h-8 md:w-10 md:h-10"
           />
@@ -71,7 +74,7 @@ function Header({ cart }) {
         <NavLink to="#" className="lg:hidden">
           <img
             className="w-8 h-8 lg:hidden"
-            src="/public/images/svg/hamburger.svg"
+            src="../../public/images/svg/hamburger.svg"
             alt="Menu button"
             onClick={toggleLinks}
           />
