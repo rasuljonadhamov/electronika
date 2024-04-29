@@ -21,7 +21,7 @@ const Home = () => {
           </h1>
           <img
             src="../../../public/images/svg/spark.svg"
-            alt="Slide 1"
+            alt="Slide 2"
             className="object-cover w-full lg:w-1/2 mb-8 lg:mb-0"
           />
           <div className="text-center lg:text-left lg:w-1/2">
