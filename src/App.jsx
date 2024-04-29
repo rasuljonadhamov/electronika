@@ -1,10 +1,4 @@
-import {
-  BrowserRouter,
-  Route,
-  RouterProvider,
-  Routes,
-  createBrowserRouter,
-} from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home/Home";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -17,7 +11,7 @@ import Card from "./pages/Card/Card";
 const items = [
   {
     id: 1,
-    image: "/public/images/png/termiz.png",
+    image: "../../../public/images/png/termiz.png",
     title: "Electric Kettle 1L",
     description:
       "Lorem ipsum dolor sit amet consectetur. Id luctus pharetra suscipit dolor eu. A rhoncus sit consequat pretium in massa. Lobortis felis nisi scelerisque fringilla cursus. Tellus aliquam nascetur in accumsan massa quisque id sed.",
@@ -27,7 +21,7 @@ const items = [
   },
   {
     id: 2,
-    image: "/public/images/png/termiz.png",
+    image: "../../../public/images/png/termiz.png",
     title: "Electric Kettle 1L",
     price: "99,000 so'm",
     stockStatus: "1+",
@@ -37,7 +31,7 @@ const items = [
   },
   {
     id: 3,
-    image: "/public/images/png/termiz.png",
+    image: "../../../public/images/png/termiz.png",
     title: "Electric Kettle 1L",
     price: "99,000 so'm",
     stockStatus: "1+",
@@ -47,7 +41,7 @@ const items = [
   },
   {
     id: 4,
-    image: "/public/images/png/termiz.png",
+    image: "../../../public/images/png/termiz.png",
     title: "Electric Kettle 1L",
     price: "99,000 so'm",
     stockStatus: "1+",
@@ -57,7 +51,7 @@ const items = [
   },
   {
     id: 5,
-    image: "/public/images/png/termiz.png",
+    image: "../../../public/images/png/termiz.png",
     title: "Electric Kettle 1L",
     price: "99,000 so'm",
     stockStatus: "1+",
@@ -67,7 +61,7 @@ const items = [
   },
   {
     id: 6,
-    image: "/public/images/png/termiz.png",
+    image: "../../../public/images/png/termiz.png",
     title: "Electric Kettle 1L",
     price: "99,000 so'm",
     stockStatus: "1+",
@@ -77,7 +71,7 @@ const items = [
   },
   {
     id: 7,
-    image: "/public/images/png/termiz.png",
+    image: "../../../public/images/png/termiz.png",
     title: "Electric Kettle 1L",
     price: "99,000 so'm",
     stockStatus: "1+",
@@ -87,7 +81,7 @@ const items = [
   },
   {
     id: 8,
-    image: "/public/images/png/termiz.png",
+    image: "../../../public/images/png/termiz.png",
     title: "Electric Kettle 1L",
     price: "99,000 so'm",
     stockStatus: "1+",
