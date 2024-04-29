@@ -20,7 +20,7 @@ const Home = () => {
             avtomobilini yutib oling!
           </h1>
           <img
-            src="../../../public/images/svg/spark.svg"
+            src={"../../../public/images/svg/spark.svg"}
             alt="Slide 2"
             className="object-cover w-full lg:w-1/2 mb-8 lg:mb-0"
           />
@@ -44,7 +44,7 @@ const Home = () => {
             avtomobilini yutib oling!
           </h1>
           <img
-            src="../../../public/images/svg/spark.svg"
+            src={"../../../public/images/svg/spark.svg"}
             alt="Slide 1"
             className="object-cover w-full lg:w-1/2 mb-8 lg:mb-0"
           />

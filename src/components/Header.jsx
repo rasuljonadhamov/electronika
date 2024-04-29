@@ -25,7 +25,7 @@ function Header({ cart }) {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
         const email = user.email;
-        const shortEmail = email.substring(0, 7); // Extract first three letters
+        const shortEmail = email.substring(0, 7);
         setUserEmail(`${shortEmail}...`);
       } else {
         setUserEmail("");
