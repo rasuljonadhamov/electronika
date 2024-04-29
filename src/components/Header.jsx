@@ -52,19 +52,18 @@ function Header({ cart }) {
           className="hidden lg:block"
         />
 
-        <div
-          onClick={() => navigate("/card")}
-          className="hidden lg:flex items-center gap-3 relative"
-        >
+        <div className="hidden lg:flex items-center gap-3 relative">
           <img
             src="../../public/images/svg/profile-circle.svg"
             alt="Profile picture"
-            className="w-8 h-8 md:w-10 md:h-10"
+            className="w-8 h-8 md:w-10 md:h-10 cursor-pointer"
+            onClick={() => navigate("/login")}
           />
           <img
             src="../../public/images/svg/shopping-card.svg"
             alt="Shopping cart"
             className="w-8 h-8 md:w-10 md:h-10 cursor-pointer"
+            onClick={() => navigate("/card")}
           />
           <span className="absolute right-4 text-red-600 -top-5">
             {cart.length}

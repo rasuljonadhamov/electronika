@@ -30,7 +30,9 @@ const Card = ({ cart, setCart }) => {
           ))}
         </>
       ) : (
-        <h1>Your Card is epmty go shopping</h1>
+        <h1 className="text-3xl my-16 font-bold -tracking-tight">
+          Your Card is epmty go shopping
+        </h1>
       )}
     </div>
   );

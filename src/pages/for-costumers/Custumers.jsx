@@ -24,8 +24,26 @@ const Custumers = () => {
     let isValid = true;
     const errors = {};
 
-    if (!formData.fullName) {
+    if (formData.fullName.length < 3) {
       errors.fullName = "Ism familiya maydoni to'ldirilishi shart";
+      isValid = false;
+    }
+
+    if (
+      !(formData.phoneNumber.length > 9) &&
+      !(formData.phoneNumber.length < 16)
+    ) {
+      errors.phoneNumber = "Telefon nomerni to'g'ri kiriting!";
+      isValid = false;
+    }
+
+    if (!formData.jshir) {
+      errors.jshir = "JSHIR maydoni to'ldirilishi shart";
+      isValid = false;
+    }
+
+    if (formData.cardNumber.length < 3) {
+      errors.cardNumber = "Karta nomer maydoni to'ldirilishi shart";
       isValid = false;
     }
 
@@ -33,8 +51,7 @@ const Custumers = () => {
     return isValid;
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmit = () => {
     if (validateForm()) {
       alert("Form submitted:", formData);
     }
@@ -80,7 +97,7 @@ const Custumers = () => {
         className={"w-full"}
       />
       <Button
-        onClick={() => handleSubmit}
+        onClick={handleSubmit}
         title={"Yuborish"}
         isActive={true}
         className={"rounded-md"}

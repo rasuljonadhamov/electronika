@@ -8,6 +8,8 @@ import Details from "./pages/Category/components/Details";
 import { useState } from "react";
 import Card from "./pages/Card/Card";
 import Custumers from "./pages/for-costumers/Custumers";
+import Login from "./pages/Auth/Login";
+import Register from "./pages/Auth/Register";
 
 const items = [
   {
@@ -129,6 +131,8 @@ const App = () => {
         />
         <Route path="/about" element={<About />} />
         <Route path="/card" element={<Card cart={cart} setCart={setCart} />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
         <Route
           path="/costumers"
           element={<Custumers cart={cart} setCart={setCart} />}
