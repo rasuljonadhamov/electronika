@@ -1,5 +1,5 @@
 import Slider from "react-slick";
-import Button from "../../components/Button";
+// import Button from "../../components/Button";
 
 const Home = () => {
   const settings = {
