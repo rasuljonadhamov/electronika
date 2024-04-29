@@ -1,3 +1,6 @@
+import { Link } from "react-router-dom";
+import Button from "../../components/Button";
+
 const Card = ({ cart, setCart }) => {
   console.log(cart);
   return (
@@ -16,6 +19,13 @@ const Card = ({ cart, setCart }) => {
                 <p className="text-gray-700 text-base mb-2">{p.price}</p>
                 <p className="text-gray-700 text-base mb-2">{p.amount}</p>
               </div>
+
+              <Link
+                className="no-underline font-normal mt-16 text-1xl py-2 px-4 bg-primary text-white rounded-md "
+                to={"/costumers"}
+              >
+                Sotib olish
+              </Link>
             </div>
           ))}
         </>

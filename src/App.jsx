@@ -7,6 +7,7 @@ import About from "./pages/About/About";
 import Details from "./pages/Category/components/Details";
 import { useState } from "react";
 import Card from "./pages/Card/Card";
+import Custumers from "./pages/for-costumers/Custumers";
 
 const items = [
   {
@@ -128,6 +129,10 @@ const App = () => {
         />
         <Route path="/about" element={<About />} />
         <Route path="/card" element={<Card cart={cart} setCart={setCart} />} />
+        <Route
+          path="/costumers"
+          element={<Custumers cart={cart} setCart={setCart} />}
+        />
       </Routes>
       <Footer />
     </BrowserRouter>

@@ -110,7 +110,7 @@
   font-size: 1.1rem;
   font-weight: 600;
   font-family: var(--shelly-font-family-secondary);
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 a {

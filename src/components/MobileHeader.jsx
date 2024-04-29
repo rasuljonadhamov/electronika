@@ -58,6 +58,15 @@ export const MobileNav = ({ open, setOpen }) => {
             Aloqa
           </Link>
         </li>
+        <li className="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-589">
+          <Link
+            onClick={() => setOpen(!open)}
+            className=" text-white "
+            to="/card"
+          >
+            Card
+          </Link>
+        </li>
       </ul>{" "}
     </div>
   );
