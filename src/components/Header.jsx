@@ -64,14 +64,14 @@ function Header({ cart }) {
           <img
             src="../../public/images/svg/shopping-card.svg"
             alt="Shopping cart"
-            className="w-8 h-8 md:w-10 md:h-10"
+            className="w-8 h-8 md:w-10 md:h-10 cursor-pointer"
           />
           <span className="absolute right-4 text-red-600 -top-5">
             {cart.length}
           </span>
         </div>
 
-        <NavLink to="#" className="lg:hidden">
+        <NavLink to="#" className="lg:hidden cursor-pointer">
           <img
             className="w-8 h-8 lg:hidden"
             src="../../public/images/svg/hamburger.svg"

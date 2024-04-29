@@ -61,16 +61,16 @@ const Details = ({ products, buttons, cart, setCart }) => {
         ))}
       </div>
 
-      <div className="lg:hidden flex justify-evenly gap-9 px-16">
+      <div className="lg:hidden flex justify-between gap-9 px-8">
         <Input
           placeholder="Qidiruv..."
           type="search"
-          className="lg:hidden w-32 sm:w-44"
+          className="lg:hidden w-52  sm:w-96"
         />
         <select
           value={activeButtonId}
           onChange={(e) => handleButtonClick(parseInt(e.target.value))}
-          className="block appearance-none w-36 bg-white border border-gray-300 text-gray-700 py-2 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+          className="block appearance-none w-36 bg-white border border-gray-300 text-gray-700   pr-8 pl-2 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
         >
           <option value="">Filtr</option>
           {buttons.map((button) => (

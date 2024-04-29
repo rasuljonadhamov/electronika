@@ -24,17 +24,25 @@ export const MobileNav = ({ open, setOpen }) => {
       </div>
       <ul id="menu-main-menu-1" className={`lg:hidden `}>
         <li className="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-596">
-          <Link className=" text-white" to="/">
+          <Link onClick={() => setOpen(!open)} className=" text-white" to="/">
             Asosiy bo’lim
           </Link>
         </li>
         <li className="menu-item menu-item-type-post_type menu-item-object-page menu-item-593">
-          <Link className=" text-white" to="/about">
+          <Link
+            onClick={() => setOpen(!open)}
+            className=" text-white"
+            to="/about"
+          >
             Biz haqimizda
           </Link>
         </li>
         <li className="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-590">
-          <Link className=" text-white" to="/category">
+          <Link
+            onClick={() => setOpen(!open)}
+            className=" text-white"
+            to="/category"
+          >
             Mahsulotlar
           </Link>
           <span className="dropdown-icon">
@@ -42,7 +50,11 @@ export const MobileNav = ({ open, setOpen }) => {
           </span>
         </li>
         <li className="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-589">
-          <Link className=" text-white" to="/contact">
+          <Link
+            onClick={() => setOpen(!open)}
+            className=" text-white"
+            to="/contact"
+          >
             Aloqa
           </Link>
         </li>
